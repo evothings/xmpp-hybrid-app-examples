@@ -2,7 +2,7 @@
 
 The easiest way to get started developing a mobile app that communicates using XMPP is to get Evothings Client from the [App Store](https://itunes.apple.com/app/evothings-client/id848974292?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.evothings.evothingsclient&hl=en) and then use Evothings Workbench to easily load one of our example apps onto your mobile device. This will all take only about 5 minutes. From there it’s easy to start developing your own app.
 
-While you are developing your own app, it’s great to use Evothings Client because it contains the required plug-ins. These plug-ins include the [Chrome Apps Sockets TCP API](https://github.com/MobileChromeApps/mobile-chrome-apps/tree/master/chrome-cordova/plugins/chrome.sockets.tcp) needed for Strophe JS to communicate with the XMPP server through TCP sockets. The only thing you need to download is the modified Strophe JS library which can be found in [Evothings GitHub repository](https://github.com/evothings/xmpp-hybrid-app-examples), and [jQuery](http://jquery.com/download/).
+While you are developing your own app, it’s great to use Evothings Client because it contains the required plug-ins. These plug-ins include the [Chrome Apps Sockets TCP API](https://github.com/MobileChromeApps/mobile-chrome-apps/tree/master/chrome-cordova/plugins/chrome.sockets.tcp) needed for Strophe JS to communicate with the XMPP server through TCP sockets. The only thing you need to download is the modified Strophe JS library which can be found in [Evothings GitHub repository](https://github.com/Sionarch/xmpp-hybrid-app-examples/blob/master/basic/strophe.js), and [jQuery](http://jquery.com/download/).
 
 ![Sensors example application.](sensors-example-app.jpg)
 
@@ -29,7 +29,7 @@ Then add the required plugins to your project using e.g. the following commands:
 		cordova plugin add ../mobile-chrome-apps/chrome-cordova/plugins/chrome.iosSocketsCommon
 
 ### Step 3
-Download the modified Strophe JS library from Evothings GitHub repository, and the [jQuery library](http://jquery.com/download/). jQuery is used to simplify information retrieval from XMPP XML stanza’s.
+Download the modified Strophe JS library from [Evothings GitHub repository](https://github.com/Sionarch/xmpp-hybrid-app-examples/blob/master/basic/strophe.js), and the [jQuery library](http://jquery.com/download/). jQuery is used to simplify information retrieval from XMPP XML stanza’s.
 
 ### Step 4
 Start coding! Include strophe.js in your app’s index.html file. The first thing you should do is to test the connection to an XMPP server. A connection to for example jabber.se can be initiated using the following code:
