@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1,
+		maximum-scale=1, minimum-scale=1, width=device-width" />
+
+	<title>Basic XMPP app</title>
+</head>
+
+<body>
+
+	<h1>Basic XMPP app</h1>
+
+	<script src="cordova.js"></script>
+	<script src="jquery-2.1.1.js"></script>
+	<script src="strophe.js"></script>
+	
+	<script>
+
+	document.addEventListener('deviceready', onDeviceReady, false)
+
+	function onDeviceReady() {
+		var connection = new Strophe.Connection('tcp://jabber.se')
+
+		connection.connect('your_JID', 'your_password', function (status)
+		{
+			if (status == Strophe.Status.CONNECTED)
+			{
+				alert('XMPP connection successful!')
+
+				connection.addHandler(on_chat_message, null, 'message', 'chat');
+				connection.addHandler(on_presence, null, 'presence');
+				connection.addHandler(on_error_iq, null, 'iq', 'error');
+
+				connection.send($pres());
+			}
+		});
+	}
+
+	function on_chat_message(stanza) {
+		alert('New chat message from: ' + $(stanza).attr('from'))
+	}
+	function on_presence(stanza) {
+		alert('Presence from contact: ' + $(stanza).attr('from'))
+	}
+
+	function on_error_iq(stanza) {
+		$(stanza).find('error').each(function() {
+			alert('Info query error code: ' + $(this).attr('code'))
+		})
+	}
+
+	</script>
+
+</body>
+
+</html>
