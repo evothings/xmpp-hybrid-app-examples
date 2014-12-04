@@ -1,14 +1,16 @@
 # How to develop a cross-platform mobile app that communicates directly with an XMPP-server
 
-The easiest way to get started developing a mobile app that communicates using XMPP is to get Evothings Client from the [App Store](https://itunes.apple.com/app/evothings-client/id848974292?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.evothings.evothingsclient&hl=en) and then use Evothings Workbench to easily load one of our example apps onto your mobile device. This will all take only about 5 minutes. From there it’s easy to start developing your own app.
+The easiest way to get started developing a mobile app that communicates using XMPP is to get Evothings Client from the [App Store](https://itunes.apple.com/app/evothings-client/id848974292?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.evothings.evothingsclient&hl=en) and then use Evothings Workbench to load one of our example apps onto your mobile device. This will all take only about 5 minutes. From there it’s simple to start developing your own app.
 
-While you are developing your own app, it’s great to use Evothings Client because it contains the required plug-ins. These plug-ins include the [Chrome Apps Sockets TCP API](https://github.com/MobileChromeApps/mobile-chrome-apps/tree/master/chrome-cordova/plugins/chrome.sockets.tcp) needed for Strophe JS to communicate with the XMPP server through TCP sockets. The only thing you need to download is the modified Strophe JS library which can be found in [Evothings GitHub repository](https://github.com/Sionarch/xmpp-hybrid-app-examples/blob/master/basic/strophe.js), and [jQuery](http://jquery.com/download/).
+While you are developing your own app, it’s recommended to use Evothings Client because it contains the required plug-ins. These plug-ins include the [Chrome Apps Sockets TCP API](https://github.com/MobileChromeApps/mobile-chrome-apps/tree/master/chrome-cordova/plugins/chrome.sockets.tcp) needed for Strophe JS to communicate with the XMPP server through TCP sockets. The only thing you need to download is the modified Strophe JS library which can be found in [Evothings GitHub repository](https://github.com/Sionarch/xmpp-hybrid-app-examples/blob/master/basic/strophe.js), and [jQuery](http://jquery.com/download/).
 
 ![Sensors example application.](sensors-example-app.jpg)
 
 Strophe JS was originally intended for enabling websites to communicate with an XMPP server through a separate proxy and the BOSH protocol. By utilizing natively implemented TCP sockets in iOS and Android, direct connections between the mobile device and server are possible. The modified version of Strophe JS together with the Chrome Apps Sockets TCP API Cordova plug-in allows you to write cross-platform apps for everything between chatting to sophisticated sensor monitoring and control.
 
 ![Communication flow in hybrid mobile application.](hybrid-app-xmpp-communication.jpg)
+
+Advanced users might want to check out Evothings [Strophe JS repository](https://github.com/evothings/strophejs/tree/chrome-socket) (chrome-socket branch). The [src/chromesocket.js](https://github.com/evothings/strophejs/blob/chrome-socket/src/chromesocket.js) file contains for example the bindings to the native TCP sockets plugin and handling of the retrieved XML data-stream.
 
 ## Step-by-step guide to making the mobile app
 
@@ -72,4 +74,6 @@ Set up handlers for chat messages, contacts presence and errors, and send an ind
 	connection.send($pres());
 
 ### Step 6
-Play around and continue development! Please let us know if you have any problems! Check out the Strophe JS documentation to learn more about how to proceed with for example handling connection errors, how to respond to chat messages and so on. You’re also welcome to look at the code of our example apps to learn how they work.
+Play around and continue development! Check out the [Strophe JS documentation](http://strophe.im/strophejs/doc/1.1.3/files/strophe-js.html) to learn more about how to proceed with for example handling connection errors, how to respond to chat messages and so on. You’re also welcome to look at the code of our example apps to learn how they work.
+
+Please let us know if you have any problems! You're welcome to discuss or ask questions about mobile apps that uses XMPP through [Evothings forum](http://evothings.com/forum/).
