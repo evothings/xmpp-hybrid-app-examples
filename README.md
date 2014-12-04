@@ -1,6 +1,6 @@
 # How to develop a cross-platform mobile app that communicates directly with an XMPP-server
 
-The easiest way to get started developing a mobile app that communicates using XMPP is to get Evothings Client from the [App Store](https://itunes.apple.com/app/evothings-client/id848974292?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.evothings.evothingsclient&hl=en) and then use Evothings Workbench to load one of our example apps onto your mobile device. This will all take only about 5 minutes. From there it’s simple to start developing your own app.
+The easiest way to get started developing a mobile app that communicates using XMPP is to get Evothings Client from the [App Store](https://itunes.apple.com/app/evothings-client/id848974292?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.evothings.evothingsclient&hl=en) and then use Evothings Workbench to load one of our [example apps](https://github.com/evothings/xmpp-hybrid-app-examples) onto your mobile device. This will all take only about 5 minutes. From there it’s simple to start developing your own app.
 
 While you are developing your own app, it’s recommended to use Evothings Client because it contains the required plug-ins. These plug-ins include the [Chrome Apps Sockets TCP API](https://github.com/MobileChromeApps/mobile-chrome-apps/tree/master/chrome-cordova/plugins/chrome.sockets.tcp) needed for Strophe JS to communicate with the XMPP server through TCP sockets. The only thing you need to download is the modified Strophe JS library which can be found in [Evothings GitHub repository](https://github.com/Sionarch/xmpp-hybrid-app-examples/blob/master/basic/strophe.js), and [jQuery](http://jquery.com/download/).
 
@@ -15,7 +15,7 @@ Advanced users might want to check out Evothings [Strophe JS repository](https:/
 ## Step-by-step guide to making the mobile app
 
 ### Step 1
-Get the Evothings Client development app from the [App Store](https://itunes.apple.com/app/evothings-client/id848974292?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.evothings.evothingsclient&hl=en), or create your own Cordova app using the Cordova command-line tools. 
+Get the Evothings Client development app from the [App Store](https://itunes.apple.com/app/evothings-client/id848974292?mt=8) or [Google Play](https://play.google.com/store/apps/details?id=com.evothings.evothingsclient&hl=en), or create your own Cordova app using the [Cordova command-line tools](https://github.com/apache/cordova-cli).
 
 ### Step 2
 This step is needed only if you create your own Cordova app and involves adding the required plug-in “org.chromium.sockets.tcp” and its dependencies to your Cordova project. First download the Chrome Apps for Mobile toolchain, which can be done for example with Git using the following command:
